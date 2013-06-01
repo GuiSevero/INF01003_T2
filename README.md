@@ -35,9 +35,10 @@ Um exemplo de aplicação de um memento é em banco de dados. Transações de da
 Front controller é um design pattern muito utilizado na construção de sistemas web. A idéia por trás do front controller é bem simples.  Ele é basicamente um ponto de entrada centralizado para todas as requisições feitas. Mesno sendo usualmente utilizado para web, ele também poderia ser utilizado para aplicações desktop comuns.
 
 A vantagem está no fato de que em um sistema web, muitas coisas precisam ser feitas para todas as requisições. Ao utilizarmos um único handler para todas as requisições, evitamos que o código seja replicado diversas vezes, mas também podemos ter execuções específicas para requisições, o que torna o código muito melhor. Além disso, podemos com isso utilizar o conceito de views, isto é, separar a perte de aprsentação da lógica de processamento.
-
+<span align="center">
 ![Figura 02](images/figura02.jpg "Figura 02")
-
+Figura 02
+</span>
 
 ### Socket.io
 
