@@ -25,7 +25,7 @@ Não modifica ou examina o conteúdo do memento
 
 Diagrama de classes para um memento:
 
-Figura 01
+![Figura 01](images/figura01.gif "Figura 01")
 
 Um exemplo de aplicação de um memento é em banco de dados. Transações de dados ocorrem atomicamente. Entretanto, uma transação pode conter mais de uma informação sobre um banco. Com isso, de uma das operações falha, pode ser necessário que um rollback seja feito, restaurando o banco para o estado inicial. Isso pode ser feito através da solicitação de um momento antes de as operações começarem a ser executadas.
 
@@ -36,7 +36,7 @@ Front controller é um design pattern muito utilizado na construção de sistema
 
 A vantagem está no fato de que em um sistema web, muitas coisas precisam ser feitas para todas as requisições. Ao utilizarmos um único handler para todas as requisições, evitamos que o código seja replicado diversas vezes, mas também podemos ter execuções específicas para requisições, o que torna o código muito melhor. Além disso, podemos com isso utilizar o conceito de views, isto é, separar a perte de aprsentação da lógica de processamento.
 
-Figura 02
+![Figura 02](images/figura02.jpg "Figura 02")
 
 
 ### Socket.io
@@ -51,7 +51,7 @@ Socket.io é uma biblioteca javascript para a criação de sockets web persisten
 Yii é um framework MVC de código aberto, orientado a objetos em PHP que utiliza componentes para o desenvolvimento de grandes aplicações Web. Permite máxima reutilização de códigos na programação Web e pode acelerar significativamente o processo de desenvolvimento. O nome Yii (pronunciado i) representa as palavras fácil (easy), eficiente (efficient) extensível .
 Yii utiliza um FrontController para gerenciar as requisições e dar início ao aplicativo no modelo MVC.
 Na imagem a seguir podemos observar a estrutura MVC que o framework nos disponibiliza. Nota-se que o arquivo index.php server de ponto de acesso a aplicação web, caracterizando assim o padrão Front Controller.
-Figura 03
+![Figura 03](images/figura03.png "Figura 03")
 
 ### Exemplo de Aplicações
 
@@ -75,8 +75,8 @@ require_once($yii);
 Yii::createWebApplication($config)->run();
 
 ```
+Figura 04
 
-![Figura 04](images/figura04.png "Figura 04")
 A partir do método estático createWebApplication da classe Yii, como é mostrado na Figura 04,  é que de fato temos todo o workflow mostrado na Figura 03. Todo o cliente conectado ao servidor obrigatoriamente passa por esta parte do código.  
 
 
