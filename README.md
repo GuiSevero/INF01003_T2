@@ -2,8 +2,8 @@
 #### INF01003 - Engenharia de Software II (Marcelo Pimenta).
 ---------------
 
-Memento
-====
+### Memento
+
 
 Memento é uma design pattern descrita no livro Design Patterns: Elements of Reusable Object-Oriented Software.
 Às vezes, pode ser que precisemos capturar o estado interno de um objeto, para que ele possa ser recuperado mais tarde. Se quisermos, por exemplo, implementar uma ação de desfazer em um classe calculadora. Armazenar as informações para isso no próprio objeto seria muito custoso, além de que diversos métodos precisariam ser incluidos na classe, aumentando muito o seu tamanho. Podemos fazer então uma classe para gerenciar essas operações de desfazer. Entretanto, se dermos acesso aos estados internos da classe calculadora para a classe que seria responsável por guardar o estado interno, estamos violando o encapsulamento. É isso que o memento se propõe a resolver. Ou seja, ele possibilita salvar o estado interno de um objeto, sem quebrar o encapsulamento, através de uma classe memento.
@@ -13,11 +13,11 @@ Armazena o estado interno (todas as informações necessárias)da classe origina
 Proteje contra acesso de objetos que não sejam o originator
 Mementos tem duas interfaces. O caretaker pode apenas passar o memento para outros objetos. O originator, entretanto, ve uma interface larga, que permite acesso a todos os dados necessários para que ele volte a um estado anterior.
 
-### Originator 
+#### Originator 
 Cria um memento contendo um snapshot de seu estado interno atual. 
 Usa o memento pra voltar a um determinado estado atual.
 
-### Caretaker
+#### Caretaker
 Responsável por gerenciar a existêcia do memento.
 Não modifica ou examina o conteúdo do memento
 
@@ -27,8 +27,8 @@ Figura 01
 
 Um exemplo de aplicação de um memento é em banco de dados. Transações de dados ocorrem atomicamente. Entretanto, uma transação pode conter mais de uma informação sobre um banco. Com isso, de uma das operações falha, pode ser necessário que um rollback seja feito, restaurando o banco para o estado inicial. Isso pode ser feito através da solicitação de um momento antes de as operações começarem a ser executadas.
 
- Front Controller
- ===
+### Front Controller
+
 
 Front controller é um design pattern muito utilizado na construção de sistemas web. A idéia por trás do front controller é bem simples.  Ele é basicamente um ponto de entrada centralizado para todas as requisições feitas. Mesno sendo usualmente utilizado para web, ele também poderia ser utilizado para aplicações desktop comuns.
 
@@ -37,25 +37,24 @@ A vantagem está no fato de que em um sistema web, muitas coisas precisam ser fe
 Figura 02
 
 
-Socket.io
-===
+### Socket.io
 
 Socket.io é uma biblioteca javascript para a criação de sockets web persistentes e não bloqueantes. Normalmente é usado como um componente do NodeJS e é usado principalmente para aplicações web em tempo real como chats, jogos, etc. Basicamente, tem duas partes, uma parte que roda no lado do cliente, e outra parte que roda no servidor. Ambos componentes tem uma API praticamente idêntica. Suas principais características são programação orientada a eventos, funções de entrada e saída não bloqueante, oferece transparência entre os diferentes mecanismos de transporte que existe nos variados navegadores web. 
 
 
 
-Yii Framework
-===
+### Yii Framework
+
 
 Yii é um framework MVC de código aberto, orientado a objetos em PHP que utiliza componentes para o desenvolvimento de grandes aplicações Web. Permite máxima reutilização de códigos na programação Web e pode acelerar significativamente o processo de desenvolvimento. O nome Yii (pronunciado i) representa as palavras fácil (easy), eficiente (efficient) extensível .
 Yii utiliza um FrontController para gerenciar as requisições e dar início ao aplicativo no modelo MVC.
 Na imagem a seguir podemos observar a estrutura MVC que o framework nos disponibiliza. Nota-se que o arquivo index.php server de ponto de acesso a aplicação web, caracterizando assim o padrão Front Controller.
 Figura 03
 
-Exemplo de Aplicações
-===
+### Exemplo de Aplicações
 
-### Front Controller
+
+#### Front Controller
 Em nosso exemplo de Front Controller nós criamos uma aplicação web com a ajuda do framework Yii PHP. Como descrevemos anteriormente o Yii utiliza o arquivo index.php como Front Controller. Podemos observar como isto é feito no trecho de código a seguir.
 
 ```php
