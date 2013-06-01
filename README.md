@@ -86,4 +86,65 @@ Figura 04
 
 A partir do método estático createWebApplication da classe Yii, como é mostrado na Figura 04,  é que de fato temos todo o workflow mostrado na Figura 03. Todo o cliente conectado ao servidor obrigatoriamente passa por esta parte do código.  
 
+#### Socket IO
+Neste exemplo usamos uma aplicação feita por Guilherme Severo e Cláudio Busato para a cadeira de Sistemas Operacionais II. A aplicação é uma simplificação do jogo  Imagem e Ação. No qual um jogador desenha no navegador e os outros tem que adivinhar o que esse está desenhando. No caso do jogo o desenho acontece em tempo real para todos os jogadores. Neste caso o socket.io foi utilizado para fazer uma conexão persistente com todos os jogadores. Como é orientado a eventos, a cada evento de desenho do usuário X os uruários Y1, Y2, …, Yn recebem a atualização da tela e percebem o que o usuário X está desenhando.
+O trecho de código a seguir demonstra como o servidor se comporta a cada evento do usuário X.
 
+```javascript
+    /**
+    * *************************************************************************
+    * Eventos de desenho
+    * *************************************************************************
+    */
+     
+    //Troca a cor do desenho 
+    socket.on('changeColor', function (data) {
+        socket.broadcast.emit('changeColor', data)
+    })
+
+    //Troca o tamanho do pincel
+    socket.on('changeBrush', function (data) {
+        socket.broadcast.emit('changeBrush', data)
+    })
+
+    //desenha um pixel
+    socket.on('drawPixel', function (data) {
+        socket.broadcast.emit('drawPixel', data)
+        paint.push(data)
+    })
+
+    //limpa o desenho atual
+    socket.on('clearCanvas', function (data) {
+        paint = []
+        socket.broadcast.emit('clearCanvas', data)
+    })
+```
+Figura 05
+
+Podemos observar que a cada evento que o servidor recebe de um jogador X ele dispara um broadcast (mensagem para todos conectados) para todos os outros jogadores. Assim, cada jogador recebe a atualização do desenho. 
+Conclusão
+
+Vimos que com a utilização dos padrões de projeto propostos podemos alcançar alta capacidade de reuso de código. Seguindo os padrões podemos obter uma curva de aprendizagem muito mais robusta e o desenvolvimento de software cada vez mais confiável e rápido.
+
+#### Bibliografia  e Referências
+
+* Design Patterns Elements of Reusable Object-Oriented Software 
+ Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides
+
+* http://www.oodesign.com/memento-pattern.html
+
+* http://sourcemaking.com/design_patterns/memento
+
+* http://en.wikipedia.org/wiki/Front_Controller_pattern
+
+* http://www.tutorialspoint.com/design_pattern/front_controller_pattern.htm
+
+* http://www.yiiframework.com
+
+* http://socket.io/
+
+* http://nodejs.org/
+
+* https://github.com/GuiSevero/iaction
+
+* https://github.com/GuiSevero/INF01003_T2
