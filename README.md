@@ -1,8 +1,9 @@
 ## UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL
 #### INF01003 - Engenharia de Software II (Marcelo Pimenta).
+---------------
 - Guilherme Severo
 - Eduarto Potter
----------------
+
 
 ### Memento
 
