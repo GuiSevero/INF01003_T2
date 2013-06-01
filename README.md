@@ -1,5 +1,7 @@
 ## UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL
 #### INF01003 - Engenharia de Software II (Marcelo Pimenta).
+- Guilherme Severo
+- Eduarto Potter
 ---------------
 
 ### Memento
@@ -73,7 +75,8 @@ require_once($yii);
 Yii::createWebApplication($config)->run();
 
 ```
-Figura 04
+
+![Figura 04](images/figura04.png "Figura 04")
 A partir do método estático createWebApplication da classe Yii, como é mostrado na Figura 04,  é que de fato temos todo o workflow mostrado na Figura 03. Todo o cliente conectado ao servidor obrigatoriamente passa por esta parte do código.  
 
 
